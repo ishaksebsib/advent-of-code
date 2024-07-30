@@ -1,0 +1,36 @@
+# Binaries for programs and scripts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `cargo test`
+/target/
+
+# Rust package manager lock file
+Cargo.lock
+
+# If you have a `target/` folder at the root of your repository
+# because of a virtual workspace, you may want to ignore that as well.
+# Uncomment the following line if it applies to your case.
+# /target/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+
+# Optional: Uncomment the following lines if you have dependencies in the crate
+# and don't want to check in the package cache.
+# /.cargo/
+
+# Optional: Uncomment the following line if you have generated documentation.
+# /doc/
+
+# Optional: Uncomment the following lines if you are running tests with code coverage
+# /.coverage/
+# /.coveralls.yml
+
+# Optional: Uncomment the following lines if you are using custom build scripts
+# /build.rs
