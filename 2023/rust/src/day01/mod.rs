@@ -24,5 +24,16 @@ pub fn run() -> u32 {
         })
         .sum::<u32>();
 
+    println!("Day 1: {}", output);
     output
+}
+
+#[cfg(test)]
+mod tests {
+    use super::run;
+
+    #[test]
+    fn test_run() {
+        assert_eq!(run(), 54940);
+    }
 }
