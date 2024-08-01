@@ -55,3 +55,13 @@ pub fn run() -> u32 {
     println!("Day 1 Part 2: {}", sum);
     sum
 }
+
+#[cfg(test)]
+mod tests {
+    use super::run;
+
+    #[test]
+    fn test_run() {
+        assert_eq!(run(), 54208);
+    }
+}
