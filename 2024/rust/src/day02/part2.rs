@@ -1,6 +1,6 @@
 use std::{
     fs::File,
-    io::{ BufRead, BufReader},
+    io::{BufRead, BufReader},
 };
 
 pub fn run() -> u32 {
@@ -23,8 +23,19 @@ pub fn run() -> u32 {
             }
         };
 
+        // First check if the line is safe without removing any levels
         if is_valid_sequence(&line_vec) {
             output += 1;
+        } else {
+            for i in 0..line_vec.len() {
+                let mut remove_one = line_vec.clone();
+                remove_one.remove(i);
+
+                if is_valid_sequence(&remove_one) {
+                    output += 1;
+                    break;
+                }
+            }
         }
     }
 
@@ -43,10 +54,12 @@ fn is_valid_sequence(line_vec: &[i32]) -> bool {
     for window in line_vec.windows(2) {
         let diff = window[1] - window[0];
 
+        // Check if the difference is within the valid range of 1 to 3
         if !(1..=3).contains(&diff.abs()) {
             return false;
         }
 
+        // Check if the sequence is increasing or decreasing
         if diff > 0 {
             is_decreasing = false;
         } else if diff < 0 {
